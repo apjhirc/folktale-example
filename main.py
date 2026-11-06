@@ -5,7 +5,31 @@ health = 10
 dragon_hp = 10
 round = 1
 chosen = None
-questions = [{'q': 'Who built the Anping Fort?', 'a1': 'Ing-wen Tsai', 'a2': 'Cheng Gong Zheng', 'a3': 'Confucious', 'a4': 'Dutch East India Company (VOC)', 'ans': 'a4'}]
+
+questions = [
+    {'q': 'Who built the Anping Fort?', 'a1': 'Tsai Ing-wen', 'a2': 'Zheng Chenggong', 'a3': 'Confucius', 'a4': 'Dutch East India Company (VOC)', 'ans': 'a4'},
+    {'q': 'What was the original name of Anping Fort?', 'a1': 'Fort Zeelandia', 'a2': 'Fort Provintia', 'a3': 'Fort San Domingo', 'a4': 'Fort Santiago', 'ans': 'a1'},
+    {'q': 'In which year did the Dutch arrive in Anping?', 'a1': '1600', 'a2': '1624', 'a3': '1662', 'a4': '1895', 'ans': 'a2'},
+    {'q': 'Who defeated the Dutch and took control of Anping in 1662?', 'a1': 'Chiang Kai-shek', 'a2': 'Sun Yat-sen', 'a3': 'Zheng Chenggong (Koxinga)', 'a4': 'Confucius', 'ans': 'a3'},
+    {'q': 'Which city is Anping District part of?', 'a1': 'Taipei', 'a2': 'Kaohsiung', 'a3': 'Taichung', 'a4': 'Tainan', 'ans': 'a4'},
+    {'q': 'What is Anping Old Street famous for?', 'a1': 'Traditional snacks and historic shops', 'a2': 'Snowboarding', 'a3': 'Skyscrapers', 'a4': 'Hot springs', 'ans': 'a1'},
+    {'q': 'What is the Anping Tree House famous for?', 'a1': 'Its glass roof', 'a2': 'Banyan tree roots covering an old warehouse', 'a3': 'Its underground tunnels', 'a4': 'Its golden walls', 'ans': 'a2'},
+    {'q': 'What was the Anping Tree House originally used as?', 'a1': 'A royal palace', 'a2': 'A school', 'a3': 'A warehouse', 'a4': 'A military hospital', 'ans': 'a3'},
+    {'q': 'Which European country controlled Anping during the 17th century?', 'a1': 'France', 'a2': 'Spain', 'a3': 'Portugal', 'a4': 'Netherlands', 'ans': 'a4'},
+    {'q': 'What is a famous traditional snack in Anping?', 'a1': 'Shrimp rolls', 'a2': 'Sushi', 'a3': 'Pizza', 'a4': 'Hamburgers', 'ans': 'a1'},
+    {'q': 'Which seafood ingredient is especially associated with Anping?', 'a1': 'Salmon', 'a2': 'Oysters', 'a3': 'Tuna', 'a4': 'Lobster', 'ans': 'a2'},
+    {'q': 'What is the Anping Old Fort also known as?', 'a1': 'Chihkan Tower', 'a2': 'Eternal Golden Castle', 'a3': 'Fort Zeelandia', 'a4': 'Fort San Domingo', 'ans': 'a3'},
+    {'q': 'What is the main purpose of Anping Harbor historically?', 'a1': 'Mining gold', 'a2': 'Growing tea', 'a3': 'Manufacturing cars', 'a4': 'Maritime trade and transportation', 'ans': 'a4'},
+    {'q': 'Which famous Anping landmark was built during the Qing dynasty to defend the coast?', 'a1': 'Eternal Golden Castle', 'a2': 'Taipei 101', 'a3': 'Chihkan Tower', 'a4': 'Anping Tree House', 'ans': 'a1'},
+    {'q': 'What is another name for the Eternal Golden Castle?', 'a1': 'Fort Zeelandia', 'a2': 'Erkunshen Battery', 'a3': 'Fort Provintia', 'a4': 'Fort San Domingo', 'ans': 'a2'},
+    {'q': 'What kind of trees cover the Anping Tree House?', 'a1': 'Pine trees', 'a2': 'Cherry trees', 'a3': 'Banyan trees', 'a4': 'Maple trees', 'ans': 'a3'},
+    {'q': 'What is Anping famous for producing as a traditional preserved food?', 'a1': 'Chocolate', 'a2': 'Cheese', 'a3': 'Kimchi', 'a4': 'Preserved fruits', 'ans': 'a4'},
+    {'q': 'Which Anping attraction is known for its beautiful sunset views?', 'a1': 'Yuguang Island', 'a2': 'Alishan', 'a3': 'Sun Moon Lake', 'a4': 'Taroko Gorge', 'ans': 'a1'},
+    {'q': 'What is the traditional local name for the Anping area before it became known as Anping?', 'a1': 'Danshui', 'a2': 'Tayouan (Dayuan)', 'a3': 'Lukang', 'a4': 'Hengchun', 'ans': 'a2'},
+    {'q': 'What is Anping especially important for in Taiwan history?', 'a1': 'It was the first place with an airport', 'a2': 'It was the tallest city', 'a3': 'It was an early center of European settlement and trade', 'a4': 'It was the first place with a railway', 'ans': 'a3'}
+]
+
+
 
 
 def typingPrint(text):
