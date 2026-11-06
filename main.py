@@ -160,6 +160,75 @@ def battle():
         round += 1
         battle()
 
+def end():
+    if health != 0:
+        print(r"""
+  ==============================================================================
+
+       DDDDD    EEEEEEE  FFFFFFF  EEEEEEE     A     TTTTTTT  EEEEEEE  DDDDD
+       D    D   E        F        E          A A       T     E        D    D
+       D     D  EEEEE    FFFFF    EEEEE     AAAAA      T     EEEEE    D     D
+       D    D   E        F        E        A     A     T     E        D    D
+       DDDDD    EEEEEEE  F        EEEEEEE  A       A   T     EEEEEEE  DDDDD
+
+  ==============================================================================
+
+                                   .-=========-.
+                                   \'-=======-'/
+                                   _|   RIP   |_
+                                  [_____________]
+                                  |             |
+                                  |   DRAGON    |
+                                  |   DEFEATED  |
+                                  |_____________|
+
+                             *        *        *
+                                \    |    /
+                                 \   |   /
+                                  \  |  /
+                                   \ | /
+                                    \|/
+
+                                       O
+                                      /|\
+                                  ===/ | \===
+                                      / \
+                                     /   \
+
+  ==============================================================================""")
+        typingPrint('\nRyan: Congrats! You have defeated the dragon, thank you for saving Anping')
+    else:
+        print(r"""
+      ==============================================================================
+
+     FFFFFFF     A     IIIII  L        EEEEEEE  DDDDD
+     F          A A      I    L        E        D    D
+     FFFFF     AAAAA     I    L        EEEEE    D     D
+     F        A     A    I    L        E        D    D
+     F        A     A  IIIII  LLLLLLL  EEEEEEE  DDDDD
+
+  ==============================================================================
+
+                              GAME OVER
+
+                    __________________________
+                   /                          \
+                  /     THE DRAGON WINS!       \
+                  \____________________________/
+
+                              (  x_x  )
+                                 /|\
+                          ______/ | \______
+                                 / \
+                                /   \
+
+                        __________________
+                       /                  \
+                      /     YOU FAILED     \
+                      \____________________/
+
+  ==============================================================================""")
+        typingPrint('\nRyan: Oh, such a pity, try again?')
 
 
 
@@ -244,11 +313,15 @@ typingPrint("Ryan: Let's go!")
 
 enterToContinue()
 
+clearScreen()
+
 while round < 10:
     if health != 0:
         battle()
         round += 1
+        clearScreen()
     else:
         break
-
-#end()
+        clearScreen()
+clearScreen()
+end()
