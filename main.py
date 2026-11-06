@@ -1,4 +1,9 @@
 import time,sys,os
+from shutil import get_terminal_size
+
+health = 10
+dragon_hp = 10
+
 def typingPrint(text):
   for character in text:
     sys.stdout.write(character)
@@ -15,6 +20,7 @@ def typingInput(text):
   value = input()  
   return value
 
+
 def enterToContinue():
     print("\n\n")
     print(r"""
@@ -29,6 +35,58 @@ def enterToContinue():
 
 def clearScreen():
   os.system("clear")
+
+def getHP(character):
+    if character == 'd':
+        if dragon_hp != 10:
+            return ("█"*dragon_hp+' '*(10-dragon_hp))
+        else:
+            return ("█"*dragon_hp)
+    else:
+        if health != 10:
+            return ("█"*health+' '*(10-health))
+        else:
+            return ("█"*health)
+
+
+
+
+def battle():
+    print(f"Health: [{getHP('p')}] DRAGON HP: [{getHP('d')}]".rjust(get_terminal_size().columns))
+    print(r"""
+                                               / \                 / \
+                                  ____________/   \_______________/   \
+                             ____/                                     \__
+                        ____/       /\                    /\             \
+                   ____/           /  \__________________/  \             \
+                  /                /                         \             \
+                 /________________/                           \_____________\
+                                                __
+                                         ___.--'  '--.__
+                                    _.-''    _    _     ''-._
+                                  .'        (o)  (o)         '.
+                                 /             __              \
+                                /       ___.--'  '--.__         |
+                               |    _.-'     ______    '-.     /
+                               | .-'      .-'      '-.    \___/
+                                \|       /  /\  /\    \    |
+                                 \       \_/  \/  \___/   /
+                                  '.__                  _.'
+                                      '---.________.---'
+                                            /    \
+                                           /      \__________
+                                          /                  \____
+                                         /                        '--.
+                                        /                             \
+                                       /_______________________________/
+
+      O
+     /|\                                      >>>  >>>  >>>
+  ==/ | \==================================> >>>  >>>  >>>
+     / \                                      >>>  >>>  >>>
+    /   \
+""")
+
 
 clearScreen()
 #typingPrint("Hello")
@@ -101,3 +159,13 @@ typingPrint("RLong: From now on, Anping belongs to me! Hahaha!")
 time.sleep(0.5)
 typingPrint("\nYou have to stop it.")
 enterToContinue()
+
+clearScreen()
+typingPrint("Ryan: Hi adventurer!\nI'm Ryan. As you can see. Anping is being attacked by the evil dragon.")
+time.sleep(0.1)
+typingPrint("Ryan: In this game, you have to answer some questions about Anping to defeat RLong.")
+time.sleep(0.1)
+typingPrint("Ryan: Let's go!")
+
+enterToContinue()
+battle()
