@@ -5,16 +5,10 @@ It's a trivia game about my home, Anping
 
 ## How to play
 Simply execute
-```
-```
+
 ```python
 python3 main.py
-```
-```
 
-
-```
-```
 ## Contributing
 PR is welcome :>
 
