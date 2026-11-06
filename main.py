@@ -1,11 +1,11 @@
 import time,sys,os,random
 from shutil import get_terminal_size
-
+from random import randint
 health = 10
 dragon_hp = 10
 round = 1
 chosen = None
-questions = [{q: 'Who built the Anping Fort?', a1: 'Ing-wen Tsai', a2: 'Cheng Gong Zheng', a3: 'Confucious', a4: 'Dutch East India Company (VOC)', ans: 'a4'}]
+questions = [{'q': 'Who built the Anping Fort?', 'a1': 'Ing-wen Tsai', 'a2': 'Cheng Gong Zheng', 'a3': 'Confucious', 'a4': 'Dutch East India Company (VOC)', 'ans': 'a4'}]
 
 
 def typingPrint(text):
@@ -69,7 +69,8 @@ def getHP(character):
 
 
 def battle():
-    print(f"Health: [{getHP('p')}] DRAGON HP: [{getHP('d')}]".rjust(get_terminal_size().columns))
+    global round,dragon_hp,health
+    print(f"Round: {round} Health: [{getHP('p')}] DRAGON HP: [{getHP('d')}]".rjust(get_terminal_size().columns))
     print(r"""
                                                / \                 / \
                                   ____________/   \_______________/   \
@@ -104,12 +105,41 @@ def battle():
     /   \
     
 """)
-    typingPrint("Please Choose The Best Response")
-    print(blockText())
+    
+    chosen = randint(0,len(questions)-1)
+
+    typingPrint("Please Choose The Best Response\n")
+    print(blockText(questions[chosen]["q"]))
+
+    print(f'Option A: {questions[chosen]["a1"]}')
+    print(f'Option B: {questions[chosen]["a2"]}')
+    print(f'Option C: {questions[chosen]["a3"]}')
+    print(f'Option D: {questions[chosen]["a4"]}')
+
+    ans = input('Input Your Answer Ex:A ) >> ')
+
+    if ans == 'A':
+        ans = 'a1'
+    if ans == 'B':
+        ans = 'a2'
+    if ans == 'C':
+        ans = 'a3'
+    if ans == 'D':
+        ans = 'a4'
+
+    if ans == questions[chosen]["ans"]:
+        round += 1
+        dragon_hp -= 1
+        battle()
+    else:
+        health -= 1
+        round += 1
+        battle()
 
 
 
-#clearScreen()
+
+clearScreen()
 #typingPrint("Hello")
 print(r"""
                    / \  //\
@@ -195,4 +225,6 @@ while round < 10:
         battle()
         round += 1
     else:
-        pass
+        break
+
+#end()
