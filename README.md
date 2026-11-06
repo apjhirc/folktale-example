@@ -8,7 +8,7 @@ Simply execute
 
 ```python
 python3 main.py
-
+```
 ## Contributing
 PR is welcome :>
 
