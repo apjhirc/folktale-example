@@ -93,6 +93,7 @@ def getHP(character):
 
 
 def battle():
+    clearScreen()
     global round,dragon_hp,health
     print(f"Round: {round} Health: [{getHP('p')}] DRAGON HP: [{getHP('d')}]".rjust(get_terminal_size().columns))
     print(r"""
@@ -152,16 +153,12 @@ def battle():
         ans = 'a4'
 
     if ans == questions[chosen]["ans"]:
-        round += 1
         dragon_hp -= 1
-        battle()
     else:
         health -= 1
-        round += 1
-        battle()
 
 def end():
-    if health != 0:
+    if health != 0 and health > dragon_hp:
         print(r"""
   ==============================================================================
 
@@ -319,7 +316,6 @@ while round < 10:
     if health != 0:
         battle()
         round += 1
-        clearScreen()
     else:
         break
         clearScreen()
