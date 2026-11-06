@@ -1,8 +1,12 @@
-import time,sys,os
+import time,sys,os,random
 from shutil import get_terminal_size
 
 health = 10
 dragon_hp = 10
+round = 1
+chosen = None
+questions = [{q: 'Who built the Anping Fort?', a1: 'Ing-wen Tsai', a2: 'Cheng Gong Zheng', a3: 'Confucious', a4: 'Dutch East India Company (VOC)', ans: 'a4'}]
+
 
 def typingPrint(text):
   for character in text:
@@ -20,6 +24,19 @@ def typingInput(text):
   value = input()  
   return value
 
+def blockText(text):
+    width = len(text) + 12
+    border = "═" * width
+    blank = " " * width
+    padding = " " * 6
+
+    return (
+        f"╔{border}╗\n"
+        f"║{blank}║\n"
+        f"║{padding}{text}{padding}║\n"
+        f"║{blank}║\n"
+        f"╚{border}╝"
+    )
 
 def enterToContinue():
     print("\n\n")
@@ -85,10 +102,14 @@ def battle():
   ==/ | \==================================> >>>  >>>  >>>
      / \                                      >>>  >>>  >>>
     /   \
+    
 """)
+    typingPrint("Please Choose The Best Response")
+    print(blockText())
 
 
-clearScreen()
+
+#clearScreen()
 #typingPrint("Hello")
 print(r"""
                    / \  //\
@@ -168,4 +189,10 @@ time.sleep(0.1)
 typingPrint("Ryan: Let's go!")
 
 enterToContinue()
-battle()
+
+while round < 10:
+    if health != 0:
+        battle()
+        round += 1
+    else:
+        pass
